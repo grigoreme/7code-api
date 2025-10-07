@@ -43,6 +43,31 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## Test
+Register:
+```bash
+curl -X POST http://localhost:3000/auth/register \
+-H "Content-Type: application/json" \
+-d '{"email":"x@x.com","password":"test123","name":"My name"}'
+```
+
+Response:
+```JSON
+{ "id": 1 }
+```
+
+Login:
+```bash
+curl -X POST http://localhost:3000/auth/login \
+-H "Content-Type: application/json" \
+-d '{"email":"x@x.com","password":"test123"}'
+```
+
+
+Response:
+```JSON
+{ "id": 1, "email": "x@x.com", "name": "My name" }
+```
 
 ## Run tests
 
